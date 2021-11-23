@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">calculadoraDeJuros</string>
+
+    <string name="applicationTitle">Calculora de Juros</string>
+    <string name="radioBtnValue1">Composto</string>
+    <string name="radioBtnValue2">Simples</string>
+
+    <string name="hintCapital">Capital de inicio</string>
+    <string name="hintTempo">Tempo</string>
+    <string name="hintTax">Taxa de juros</string>
+
+    <string name="btnText">Calcular</string>
+    <string name="imageViewDescription">Logo dinheiro</string>
+</resources>

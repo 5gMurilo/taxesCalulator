@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideEnd"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="20dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideStart"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="20dp" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/imageViewDescription"
+            app:layout_constraintEnd_toStartOf="@+id/guideEnd"
+            app:layout_constraintStart_toStartOf="@+id/guideStart"
+            app:layout_constraintTop_toTopOf="@id/constraintLay"
+            app:srcCompat="@drawable/money_icon"
+            tools:ignore="ImageContrastCheck,ImageContrastCheck,ImageContrastCheck,ImageContrastCheck" />
+
+        <TextView
+            android:id="@+id/titleApp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/notosans_bold"
+            android:letterSpacing="0.1"
+            android:text="@string/applicationTitle"
+            android:textSize="22sp"
+            app:layout_constraintEnd_toStartOf="@+id/guideEnd"
+            app:layout_constraintStart_toStartOf="@+id/guideStart"
+            app:layout_constraintTop_toBottomOf="@id/imageView" />
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toStartOf="@id/guideEnd"
+            app:layout_constraintStart_toEndOf="@id/guideStart"
+            app:layout_constraintTop_toBottomOf="@id/titleApp">
+
+            <RadioButton
+                android:id="@+id/radioBtn1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="5dp"
+                android:fontFamily="@font/notosans_regular"
+                android:text="@string/radioBtnValue1" />
+
+            <RadioButton
+                android:id="@+id/radioBtn2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="5dp"
+                android:fontFamily="@font/notosans_regular"
+                android:text="@string/radioBtnValue2"
+                />
+
+        </RadioGroup>
+        <!-- montante -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/taxaDejuros"
+            android:layout_width="340dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:boxStrokeColor="@color/forestGreen"
+            app:hintTextColor="@color/forestGreen"
+            app:layout_constraintEnd_toStartOf="@+id/guideEnd"
+            app:layout_constraintStart_toStartOf="@+id/guideStart"
+            app:layout_constraintTop_toBottomOf="@id/radioGroup">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/granaInicial"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="?attr/colorPrimary"
+                android:fontFamily="@font/notosans_regular"
+                android:hint="@string/hintCapital"
+                android:inputType="numberDecimal" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <!-- tempo -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/montante"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="@+id/guideEnd"
+            app:layout_constraintStart_toStartOf="@+id/guideStart"
+            app:layout_constraintTop_toBottomOf="@+id/taxaDejuros"
+            app:layout_constraintHorizontal_bias="0.05"
+            app:boxStrokeColor="@color/forestGreen"
+            app:hintTextColor="@color/forestGreen"
+            android:layout_marginTop="20dp"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tempoAplicacao"
+                style="@style/Theme.CalculadoraDeJuros"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="?attr/colorPrimary"
+                android:fontFamily="@font/notosans_regular"
+                android:hint="@string/hintTempo"
+                android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- taxa -->
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="@+id/guideEnd"
+            app:layout_constraintStart_toEndOf="@+id/montante"
+            app:layout_constraintTop_toBottomOf="@+id/taxaDejuros"
+            app:boxStrokeColor="@color/forestGreen"
+            app:hintTextColor="@color/forestGreen"
+            android:layout_marginTop="20dp"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/taxaJuros"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/notosans_regular"
+                android:hint="@string/hintTax"
+                android:background="?attr/colorPrimary"
+                android:inputType="numberDecimal" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!--  Button  -->
+
+        <Button
+            android:id="@+id/btnCalcular"
+            android:width="200dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/notosans_regular"
+            android:text="@string/btnText"
+            app:layout_constraintEnd_toStartOf="@id/guideEnd"
+            app:layout_constraintStart_toEndOf="@id/guideStart"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
+            android:backgroundTint="@color/forestGreen"
+            android:textColor="@color/mintCream"
+            />
+
+        <!--  Resultados  -->
+        <TextView
+            android:id="@+id/titleResultado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/notosans_regular"
+            android:text=""
+            android:textSize="13sp"
+            app:layout_constraintEnd_toStartOf="@id/guideEnd"
+            app:layout_constraintStart_toEndOf="@id/guideStart"
+            app:layout_constraintTop_toBottomOf="@id/btnCalcular" />
+
+        <TextView
+            android:id="@+id/resultadoJuros"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/notosans_bold"
+            android:letterSpacing="0.07"
+            android:text=""
+            android:textSize="24sp"
+            app:layout_constraintEnd_toStartOf="@id/guideEnd"
+            app:layout_constraintStart_toEndOf="@id/guideStart"
+            app:layout_constraintTop_toBottomOf="@id/titleResultado" />
+
+        <TextView
+            android:id="@+id/titlejuros"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/notosans_regular"
+            android:text=""
+            android:textSize="13sp"
+            app:layout_constraintEnd_toStartOf="@id/guideEnd"
+            app:layout_constraintStart_toEndOf="@id/guideStart"
+            app:layout_constraintTop_toBottomOf="@id/resultadoJuros" />
+
+        <TextView
+            android:id="@+id/jurosTotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/notosans_bold"
+            android:letterSpacing="0.07"
+            android:text=""
+            android:textSize="24sp"
+            app:layout_constraintEnd_toStartOf="@id/guideEnd"
+            app:layout_constraintStart_toEndOf="@id/guideStart"
+            app:layout_constraintTop_toBottomOf="@id/titlejuros" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
+
