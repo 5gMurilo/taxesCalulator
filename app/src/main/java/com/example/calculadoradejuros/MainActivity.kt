@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.RadioButton
 import android.widget.TextView
+import android.widget.Toast
 import com.google.android.material.textfield.TextInputEditText
 import java.math.RoundingMode
 import java.text.DecimalFormat
@@ -45,6 +46,7 @@ class MainActivity : AppCompatActivity() {
         var time:Double
 
         btnCalc.setOnClickListener {
+
 
             val taxaDeJuros: String = taxJuros.text.toString()
             val dindin: String = montante.text.toString()
@@ -86,6 +88,8 @@ class MainActivity : AppCompatActivity() {
                 titleJuro.text = "Os juros serão equivalentes a:"
                 textJuro.text = "R$ ${df.format(calcSimples)}"
 
+            }else{
+                Toast.makeText(applicationContext, "Selecione um tipo de juros", Toast.LENGTH_SHORT).show()
             }
 
         }
