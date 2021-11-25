@@ -101,12 +101,12 @@
         <!-- tempo -->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/montante"
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
+            android:layout_width="130dp"
+            android:layout_height="match_parent"
             app:layout_constraintEnd_toStartOf="@+id/guideEnd"
             app:layout_constraintStart_toStartOf="@+id/guideStart"
             app:layout_constraintTop_toBottomOf="@+id/taxaDejuros"
-            app:layout_constraintHorizontal_bias="0.05"
+            app:layout_constraintHorizontal_bias="0.03"
             app:boxStrokeColor="@color/forestGreen"
             app:hintTextColor="@color/forestGreen"
             android:layout_marginTop="20dp"
@@ -114,7 +114,6 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/tempoAplicacao"
-                style="@style/Theme.CalculadoraDeJuros"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="?attr/colorPrimary"
@@ -128,7 +127,7 @@
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayout"
             android:layout_width="200dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             app:layout_constraintEnd_toStartOf="@+id/guideEnd"
             app:layout_constraintStart_toEndOf="@+id/montante"
             app:layout_constraintTop_toBottomOf="@+id/taxaDejuros"
